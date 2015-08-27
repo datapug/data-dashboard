@@ -7,6 +7,6 @@ The final product will have these attributes:
 - Branched application for local deployment with Postgres as working database 
 - Interactive data query powered by Pandas/Postgres and flask-wtf for form handling 
 - Data visualization with either Bokeh/Matplotlib/Plotly/D3.js
-- User login and authentication, customizable business analytics dashbaord 
+- User login and authentication, customizable business analytics dashboard 
 
 contact: muellermemo@gmail.com
