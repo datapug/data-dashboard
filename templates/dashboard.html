@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block meta %}
+<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+{% endblock %}
+
+{% block body %}
+    <p> Select your settings: </p>
+    <form name="color_button" method='GET'>
+        Color:
+        <select name="color">
+            <option {% if color == "red" %}selected="selected"{% endif %} value="red">Red</option>
+            <option  {% if color == "green" %}selected="selected"{% endif %} value="green">Green</option>
+            <option  {% if color == "blue" %}selected="selected"{% endif %} value="blue">Blue</option>
+            <option  {% if color == "black" %}selected="selected"{% endif %} value="black">Black</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>Click <a href="/fruits">here</a> to check out some fruits!</p>
+    <p>Click <a href="/logout">here</a> to logout.</p>
+{% endblock %}

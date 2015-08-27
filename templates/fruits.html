@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Fruits{% endblock %}
+
+{% block body %}
+<h1>SQLite3 Fruit List</h1>
+<p>Statistics for Farmer: {{ selected_farmer }}</p>
+<br>
+<p> Select your settings: </p>
+<form name="fruit_button" method='GET'>
+    Farmer:
+
+    <select name="selected_farmer">
+      {% for t in distinct_farmers %}
+      <option {% if t == selected_farmer %}selected="selected"{% endif %} value="{{t}}">{{t}}</option>
+      {% endfor %}
+    </select>
+
+    <select name="selected_fruit">
+      {% for y in distinct_fruits %}
+      <option {% if y == selected_fruit %}selected="selected"{% endif %} value="{{y}}">{{y}}</option>
+      {% endfor %}
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+<br>
+{{ distinct_farmers }} <br>
+{{ distinct_fruits }} <br>
+<p>{{ selected_farmer }} is a great farmer, she likes to grow {{ selected_fruit }}!</p>
+
+<p>Click <a href="/dashboard">here</a> to go to Dashboard.</p>
+<p>Click <a href="/logout">here</a> to logout.</p>
+{% endblock %}
